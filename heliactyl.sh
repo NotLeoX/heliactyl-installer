@@ -1,5 +1,6 @@
 #! /bin/sh
 
+mkdir /var/www
 mkdir /var/www/heliactyl
 cd /var/www/heliactyl || exit 1;
 
