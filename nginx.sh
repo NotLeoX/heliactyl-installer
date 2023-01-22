@@ -6,7 +6,7 @@ read ccdomain
 echo "What is the IP address of your server and the port the heliactyl instance is running on (Eg. 192.168.1.1:8192)"                                                                                   
 read ccip                                                                                                                                                         
 
-certbot --nginx                                                                                                                                                   
+certbot certonly -d $ccdomain                                                                                                                                                  
 
 echo " server {
     listen 80;
