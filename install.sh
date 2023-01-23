@@ -1,5 +1,9 @@
 #!/bin/bash
-
+echo "=============================="
+echo "Heliactyl Installer"
+echo "v2.1.1"
+echo "NotLeoX and MR Sharma"
+echo "=============================="
 set -e
 
 output() {
