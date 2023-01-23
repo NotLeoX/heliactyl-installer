@@ -1,14 +1,17 @@
 echo "This script will setup an ssl nginx config for your heliactyl instance!" 
 
 echo "What is the domain your heliactyl instance running on? (eg: client.heliactyl.cloud)"                                                                                                                   
-read ccdomain                                                                                                                                                     
+read ccdomain     
                                                                                                                                                                   
 echo "What is the IP address of your server and the port the heliactyl instance is running on (Eg. 192.168.1.1:8192)"                                                                                   
 read ccip                                                                                                                                                         
 
-certbot certonly -d $ccdomain                                                                                                                                                  
+echo "Email For LetsEncrypt"                                                                                                                   
+read ccemail  
 
-echo " server {
+ certbot --nginx --redirect --no-eff-email --email "@ccemail" -d "$ccdomain"                                                                                                                                                 
+
+echo "server {
     listen 80;
     server_name $ccdomain;
     return 301 https://$server_name$request_uri;
@@ -34,6 +37,7 @@ location / {
       proxy_buffering off;
       proxy_set_header X-Real-IP $remote_addr;
   }
+}
 } " > /etc/nginx/sites-available/$ccdomain.conf                                                                                                                   
                                                                                                                                                                   
 ln -s /etc/nginx/sites-available/$ccdomain.conf /etc/nginx/sites-enabled/$ccdomain.conf                                                                           
