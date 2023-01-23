@@ -35,7 +35,7 @@
     echo "Prompt [TRUE/FALSE] (When set to true users wont have to relogin after a session)"
     read DOAUTH_PROMPT
     
-   echo" {
+  echo "{
   "version": "12.7.0",
   "name": "$NAME",
   "letter": "H",
