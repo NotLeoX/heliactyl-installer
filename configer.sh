@@ -6,7 +6,7 @@
     echo "-------------------------------------------------------"
     
     cd /var/www/heliactyl/
-    mv settings.json settings.json.old
+    rm settings.json 
     cd
     echo "Heliactyl Name (Hosting Name)"
     read NAME
@@ -34,8 +34,7 @@
     read DOAUTH_CALLBACKPATH
     echo "Prompt [TRUE/FALSE] (When set to true users wont have to relogin after a session)"
     read DOAUTH_PROMPT
-    
-  echo "{
+   echo '{
   "version": "12.7.0",
   "name": "$NAME",
   "letter": "H",
@@ -315,8 +314,7 @@
     "APIKey": "Proxycheck APIKey",
     "whitelistedIPs": ["IP address"]
   }
-}
-} " > /var/www/heliactyl/settings.json
-
+}' > /var/www/heliactyl/settings.json
+ 
     echo "-------------------------------------------------------"
     echo "Configuration Settings Completed!"
