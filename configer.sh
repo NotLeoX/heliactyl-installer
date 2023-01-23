@@ -1,9 +1,13 @@
     echo "-------------------------------------------------------"
+    
     echo "Starting Settings Configuration."
     echo "Author - NotYourBusiness"
+    
     echo "-------------------------------------------------------"
+    
     cd /var/www/heliactyl/
     mv settings.json settings.json.old
+    cd
     echo "Heliactyl Name (Hosting Name)"
     read NAME
     echo "TimeZone (Ex: Europe/London)"
@@ -312,5 +316,7 @@
     "whitelistedIPs": ["IP address"]
   }
 }
+} " > /var/www/heliactyl/settings.json
+
     echo "-------------------------------------------------------"
     echo "Configuration Settings Completed!"
