@@ -1,12 +1,12 @@
-echo "This script will setup an ssl nginx config for your heliactyl instance!" 
+echo "This Script Will Config Your Heliactyl Nginx Configuration" 
 
-echo "What is the domain your heliactyl instance running on? (eg: client.heliactyl.cloud)"                                                                                                                   
+echo "Domain Your Heliactyl is Running on? (eg: client.heliactyl.cloud)"                                                                                                                   
 read ccdomain     
                                                                                                                                                                   
-echo "What is the IP address of your server and the port the heliactyl instance is running on (Eg. 192.168.1.1:8192)"                                                                                   
+echo "IP and Port of Your Heliactyl Instance (Eg. 192.168.1.1:8192)"                                                                                   
 read ccip                                                                                                                                                         
 
-echo "Email For LetsEncrypt"                                                                                                                   
+echo "Email For SSL"                                                                                                                   
 read ccemail  
 
  certbot --nginx --redirect --no-eff-email --email "@ccemail" -d "$ccdomain"                                                                                                                                                 
@@ -43,4 +43,4 @@ location / {
 ln -s /etc/nginx/sites-available/$ccdomain.conf /etc/nginx/sites-enabled/$ccdomain.conf                                                                           
                                                                                                                                                                   
                                                                                                                                                                   
-echo "Your reverse proxy for your heliactyl is now setup and should be available at https://$ccdomain" 
+echo "Your Heliactyl Nginx Config is Setuped Should be Available at https://$ccdomain" 
