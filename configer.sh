@@ -1,7 +1,7 @@
     echo "-------------------------------------------------------"
     
     echo "Starting Settings Configuration."
-    echo "Author - NotYourBusiness"
+    echo "Author - NotLeoX and MR Sharma"
     
     echo "-------------------------------------------------------"
     
