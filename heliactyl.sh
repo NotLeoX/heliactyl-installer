@@ -15,7 +15,7 @@ else
         echo "Installing Heliactyl...";
 
         git clone https://github.com/OpenHeliactyl/Heliactyl.git /var/www/heliactyl
-	mv /var/www/heliactyl/panel/** /var/www/heliactyl
+	cd /var/www/heliactyl
         npm install
 
         echo "Heliactyl is now installed, Running Settings Configer";
