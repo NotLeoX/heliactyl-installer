@@ -11,7 +11,8 @@ read ccemail
 
  certbot --nginx --redirect --no-eff-email --email "@$ccemail" -d "$ccdomain"                                                                                                                                                 
 
- sed -i -e "s@$ccdomain@${FQDN}@g" /etc/nginx/sites-available/$ccdomain.conf                                                                                                                   
+ sed -i -e "s@$ccdomain@${FQDN}@g" /etc/nginx/sites-available/$ccdomain.conf    
+ sed -i -e "s@$ccip@${IP}@g" /etc/nginx/sites-available/$ccdomain.conf 
                                                                                                                                                                   
 ln -s /etc/nginx/sites-available/$ccdomain.conf /etc/nginx/sites-enabled/$ccdomain.conf                                                                           
                                                                                                                                                                   
