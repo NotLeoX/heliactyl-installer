@@ -13,7 +13,8 @@ else
   case "$proceed" in
     "Y"|"y")
         echo "Installing Heliactyl...";
-
+	
+        rm -rf /var/www/heliactyl
         git clone https://github.com/OpenHeliactyl/Heliactyl.git /var/www/heliactyl
 	cd /var/www/heliactyl
         npm install
