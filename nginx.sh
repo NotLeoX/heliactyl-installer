@@ -9,7 +9,9 @@ read ccip
 echo "Email For SSL"                                                                                                                   
 read ccemail  
 
- certbot --nginx --redirect --no-eff-email --email "@$ccemail" -d "$ccdomain"                                                                                                                                                 
+ certbot --nginx --redirect --no-eff-email --email "@$ccemail" -d "$ccdomain"   
+ 
+ sudo wget -O /etc/nginx/sites-available/$ccdomain.conf https://raw.githubusercontent.com/NotLeoX/heliactyl-installer/main/heliactyl.conf
 
  sed -i -e "s@$ccdomain@${FQDN}@g" /etc/nginx/sites-available/$ccdomain.conf    
  sed -i -e "s@$ccip@${IP}@g" /etc/nginx/sites-available/$ccdomain.conf 
