@@ -18,7 +18,8 @@ else
 	mv /var/www/heliactyl/panel/** /var/www/heliactyl
         npm install
 
-        echo "Heliactyl is now installed, to configure it and do the nginx config please refer to: https://gitlab.com/heliactyl/panel";
+        echo "Heliactyl is now installed, Running Settings Configer";
+	bash <(curl https://raw.githubusercontent.com/NotLeoX/heliactyl-installer/main/configer.sh)
         exit 0;
         ;;
     "N"|"n")
